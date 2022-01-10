@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalog</title>
+  <!-- <link rel="stylesheet" href="./css/reset.css"> -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+  <!-- font awersome link start-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- font awersome end-->
+
+  <link rel="stylesheet" href="./src/css/catalog.css">
+</head>
+
+<body>
+
+  <!-- HEADER SECTION STARTED 1/5/22-->
+  <header>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+        <a class="navbar-brand" href="index.html" >
+          <img class="nav-img" src="./photos/logo.svg" alt="">
+        </a>
+        <!-- <button class="customNavbarButton navbar-toggler" type="button" data-toggle="collapse"
+          data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> -->
+
+        <div class="collapse navbar-collapse navbar-collap" id="navbarSupportedContent">
+          <ul class="navbar-nav navbar-ul">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link homeLink" href="catalog.html">Catalog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="aboutstore.html">About Store</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="searchPage.html">Search</a>
+            </li>
+          </ul>
+        </div>
+        <div class="d-flex align-items-center">
+          <div class="btn navbar-login">
+            <img class="loginLogo" data-toggle="modal" data-target="#exampleModal" src="./photos/loginlogo.svg" alt="">
+            <span class="joinUsMain">Join us</span>
+          </div>
+          <div id="headerHamburgerWrapper" class="headerHamburgerWrapper">
+            <i class="fas fa-bars headerHamburger open"></i>
+            <i class="fas fa-times headerHamburger close"></i>
+          </div>
+
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="HeaderMobile">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="catalog.html">Catalog</a></li>
+      <li><a  href="aboutstore.html">About Store</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="searchPage.html">Search</a></li>
+    </ul>
+  </div>
+  <!-- HEADER SECTION END -->
+
+
+
+  <section id="aboutstoreContainer" class="container d-none">
+    <div class=" mb-3 col-12 bg-0">
+      <div class="row no-gutters" id="aboutCard">
+        <div class="col-md-8" id="aboutCardTextSection">
+          <button type="button" id="backButton" class="btn btn-primary ">
+            < back </button>
+              <span id="yearBadge" class="badge badge-secondary">2017</span>
+              <div class="card-body" id="aboutCart-custom">
+                <h5 class="card-title" id="aboutCardTitle">The Da Vinci Code (Robert Langdon, #2)</h5>
+                <p class="card-text" id="aboutCardText">"The Da Vinci Code follows \"symbologist\" Robert Langdon and
+                  cryptologist Sophie Neveu after a murder in the Louvre Museum in Paris causes them to become involved
+                  in a battle between the Priory of Sion and Opus Dei over the possibility of Jesus Christ and Mary
+                  Magdalene having had a child together."</p>
+              </div>
+        </div>
+        <div class="col-md-4" id="aboutCardImgSection">
+          <img id="aboutCardImg" src="https://m.media-amazon.com/images/I/41KuPr7kpZL.jpg" alt="...">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--! Slick -->
+
+  <div id="DIVBIG">
+
+    <div class="container">
+      <nav class="navbar navbar-expand-lg slickbookNav">
+        <a class="navbar-brand col-4 slickbookNavTitle" href="#">All Books</a>
+        <div class="collapse navbar-collapse col-8" id="navbarNav">
+          <a href="" class="slickboOkALL" style="color: #000;">All</a>
+          <ul class="navbar-nav overflow-auto slickUl">
+          </ul>
+        </div>
+      </nav>
+      <div id="loadingDiv" class="d-none">
+        <div class="d-flex align-items-center col-2 justify-content-center m-auto rounded p-3">
+          <strong style="color: #000;">Loading...</strong>
+          <div style="color: #000;" class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <div class="mySlider" style="position: relative;">
+        <div class="your-class"> </div>
+
+
+        <img src="./photos/left.svg" id="leftSlick" alt="">
+        <img src="./photos/right.svg" id="rightSlick" alt="">
+
+
+        <!-- 
+<img src="./images/left.svg" id="leftSlickfilter" class="d-none" alt="">
+<img src="./images/right.svg" id="rightSlickfilter" class="d-none" alt=""> -->
+        <!-- <button class="slick-prev slick-arrow" aria-label="Previous" type="button" >Previous</button> 
+    <button class="slick-next slick-arrow" aria-label="Next" type="button" >Next</button> 
+     -->
+        <!-- <button class="slick-next slick-arrow" aria-label="Next" type="button" style="">Next</button> -->
+      </div>
+    </div>
+
+
+
+
+    <div class="container">
+      <nav class="navbar navbar-expand-lg slickbookNav">
+        <a class="navbar-brand slickbookNavTitle d-flex justify-content-center" href="#">Besteller</a>
+      </nav>
+      <div class="mySlider" style="position: relative;">
+        <div class="your-class2">
+        </div>
+        <img src="./photos/left.svg" id="leftSlick2" alt="">
+        <img src="./photos/right.svg" id="rightSlick2" alt="">
+        <!-- <button class="slick-prev slick-arrow" aria-label="Previous" type="button" >Previous</button> 
+    <button class="slick-next slick-arrow" aria-label="Next" type="button" >Next</button> 
+     -->
+        <!-- <button class="slick-next slick-arrow" aria-label="Next" type="button" style="">Next</button> -->
+      </div>
+    </div>
+
+
+
+
+    <div class="container">
+      <nav class="navbar navbar-expand-lg slickbookNav">
+        <a class="navbar-brand slickbookNavTitle d-flex justify-content-center" href="#">New releases</a>
+      </nav>
+      <div class="mySlider" style="position: relative;">
+        <div class="your-class3">
+
+        </div>
+        <img src="./photos/left.svg" id="leftSlick3" alt="">
+        <img src="./photos/right.svg" id="rightSlick3" alt="">
+        <!-- <button class="slick-prev slick-arrow" aria-label="Previous" type="button" >Previous</button> 
+    <button class="slick-next slick-arrow" aria-label="Next" type="button" >Next</button> 
+     -->
+        <!-- <button class="slick-next slick-arrow" aria-label="Next" type="button" style="">Next</button> -->
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section id="aboutstoreContainer" class="container">
+    </section>
+     <div class="socialmedia-section d-flex justify-content-center text-center mb-5">
+      <div class="row d-flex justify-content-center flex-column text-center">
+        <p class="socialmedia-title">Follow us on social media</p>
+        <div class="d-flex justify-content-center align-items-center">
+          <div class="col-md-2 socialmedia-logo">
+            <a href="https://www.facebook.com/" target="_blank">
+              <img src="./photos/sociallogos/facebook.svg" alt="">
+            </a>
+          </div>
+          <div class="col-md-2 socialmedia-logo">
+            <a href="https://www.twitter.com/" target="_blank">
+              <img src="./photos/sociallogos/twitter.svg" alt="">
+            </a>
+          </div>
+          <div class="col-md-2 socialmedia-logo">
+            <a href="https://www.instagram.com/" target="_blank">
+              <img src="./photos/sociallogos/instagram.svg" alt="">
+            </a>
+          </div>
+          <div class="col-md-2 socialmedia-logo">
+            <a href="https://www.instagram.com/" target="_blank">
+              <img src="./photos/Sosial2.png" alt="">
+            </a>
+          </div>
+          <div class="col-md-2 socialmedia-logo">
+            <a href="https://www.youtube.com/" target="_blank">
+              <img src="./photos/Sosial1.png" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </main>
+
+  <!-- BTN TOP START-->
+  <button id="myBtn" onclick="topFunction()" class="footer-up-btn d-flex align-items-center justify-content-center"
+    style="display: block;">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+  <!-- BTN TOP END-->
+  <!-- FOOTER SECTION START -->
+  <footer class="customFooterShowLg">
+    <div class="footer-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="footer-logo">
+              <img src="./photos/logofooter.svg" alt="">
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md-4">
+                <ul>
+                  <li class="list-item-custom-special">Popular</li>
+                  <li class="list-item-custom">Programming</li>
+                  <li class="list-item-custom">Books for children</li>
+                  <li class="list-item-custom">Psychology</li>
+                  <li class="list-item-custom">Business</li>
+                </ul>
+              </div>
+              <div class="col-md-4 align-self-center">
+                <ul>
+                  <li class="list-item-custom">Delivery</li>
+                  <li class="list-item-custom">Payment</li>
+                  <li class="list-item-custom">About the store</li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <ul>
+                  <li class="list-item-custom-special">Help</li>
+                  <li class="list-item-custom">Contacts</li>
+                  <li class="list-item-custom">Purchase returns</li>
+                  <li class="list-item-custom">Buyer help</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-para-section">
+          <p class="footer-para">All rights reserved © 2003-2021 LIBRARY TERMS OF USE | Privacy Policy</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <footer class="customFooterShowMobile">
+    <div class="container">
+      <div class="customFootLogo">
+        <img src="./photos/logofooter.svg" alt="">
+      </div>
+      <ul class="d-flex align-items-center justify-content-center ">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Catalog</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Search</a></li>
+      </ul>
+      <div class="MobileFooterBottom">
+        <p>Library BookStore EACamp <br>
+          © 2003-2021 </p>
+      </div>
+    </div>
+  </footer>
+  <!-- FOOTER SECTION END -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body ">
+          <div class="modal-title modal-header-custom" id="exampleModalLabel">Join us</div>
+          <form>
+            <div class="input-group mb-3">
+              <input type="text" id="joinName" class="form-control" placeholder="Name" aria-label="Username"
+                aria-describedby="basic-addon1">
+            </div>
+            <div id="alertJoinFirst" class="alert alert-danger d-none" role="alert">
+              Please check form
+            </div>
+            ​
+            <div class="input-group mb-3">
+              <input type="text" id="joinEmail" class="form-control" placeholder="Email" aria-label="Username"
+                aria-describedby="basic-addon1">
+            </div>
+            <div id="alertJoinSecond" class="alert alert-danger d-none" role="alert">
+              Please check form
+            </div>
+            <button id="joinButton" type="button" class="btn btn-primary btn-block">Join</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="book-input-custom"></div>
+  <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+  <!-- <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
+
+
+
+  <!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> -->
+  <!-- <script type="text/javascript" src="slick/slick.min.js"></script>-->
+
+
+
+
+  <script src="./src/catalog.js"></script>
+</body>
+
+</html>

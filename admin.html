@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- font awersome link start-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- font awersome end-->
+  <link rel="stylesheet" href="./src/css/admin.css">
+</head>
+
+<body>
+  <!-- loading -->
+  <div class="loader loader--style1 d-none bg-dark rounded p-3" title="0">
+    <div class="d-flex align-items-center">
+      <strong class="mr-2" style="color: white;">Loading...</strong>
+      <div class="spinner-border ml-auto" role="status" style="color: white;" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <div id="adminPanelSignIn" style="display: block;">
+    <header>
+      <div class="container-fluid">
+        <div class="Vector">
+          <div class="d-flex bigVector align-items-center">
+            <img class="bookvectorimg" src="./photos/Лого (2).svg" alt="">
+            <!-- <div>
+                            <div class="vectortext1">LIBRARY</div>
+                            <div class="onlyBorder"></div>
+                            <div class="vectortext2">Admin Panel</div>
+                        </div> -->
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="container">
+        <div class="join card-body">
+          <div id="alertSingIn" class="alert alert-danger d-none mt-4" role="alert">
+            <div class="h4">Error</div>
+            Please check form
+          </div>
+          <p class="joinWelcome card-title">Welcome Admin</p>
+          <div class="joinInputContainer card-text">
+            <input type="text" name="" id="userName" placeholder="Username">
+            <input type="password" name="" id="password" placeholder="Password">
+            <button class="btn btnsignin" id="signInBtn">Join</button>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div id="adminPanelDashboard" style="display: none;">
+    <div class="container-fluid customdv">
+      <div class="row bgColor">
+
+        <div class="col-lg-3 col-md-3 side-section leftSection">
+          <div class="container" style="position: fixed;">
+            <div class="side-img">
+              <img src="./photos/Лого (2).svg" alt="">
+            </div>
+            <ul class="navbar-nav navbar-ul">
+              <li class="nav-item active nav-custom-item align-items-center">
+                <i class="navLinkIcon fas fa-user-shield"></i>
+                <a class="nav-link nav-custom-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item nav-custom-item align-items-center">                
+                <i class="navLinkIcon fas fa-home"></i>
+                <a class="nav-link nav-custom-link" href="#about-store-title">About</a>
+              </li>
+              <li class="nav-item nav-custom-item align-items-center">
+                <i class="navLinkIcon fas fa-globe-americas"></i>
+                <a class="nav-link nav-custom-link" href="#joinUs">Join us</a>
+              </li>
+              <li class="nav-item nav-custom-item align-items-center">
+                <i class="navLinkIcon fas fa-address-card"></i>
+                <a class="nav-link nav-custom-link" href="#contactUs">Contact</a>
+              </li>
+              <li class="nav-item nav-custom-item align-items-center" id="buttonxx">
+                <i class="navLinkIcon fas fa-sign-out-alt"></i>
+                <a class="nav-link nav-custom-link" href="">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+
+
+        <div id="MenuHeaderSect" class="CloseMenuHeaderSection d-lg-none d-md-none">
+          <div class="ClikedMenuWrapper">
+            <div class="side-img d-flex justify-content-between align-items-center">
+              <img class="img-small" src="./photos/Лого (2).svg" alt="">
+              <i id="closeBtn" class="fas fa-times close-btn"></i>
+            </div>
+            <ul class="navbar-nav navbar-ul">
+              <li class="nav-item active nav-custom-item align-items-center">
+                <i class="navLinkIcon fas fa-user-shield"></i>
+                <a class="nav-link nav-custom-link customNavMblink" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item nav-custom-item align-items-center">                
+                <i class="navLinkIcon fas fa-home"></i>
+                <a class="nav-link nav-custom-link customNavMblink" href="#about-store-title">About</a>
+              </li>
+              <li class="nav-item nav-custom-item align-items-center">
+                <i class="navLinkIcon fas fa-globe-americas"></i>
+                <a class="nav-link nav-custom-link customNavMblink" href="#joinUs">Join us</a>
+              </li>
+              <li class="nav-item nav-custom-item align-items-center">
+                <i class="navLinkIcon fas fa-address-card"></i>
+                <a class="nav-link nav-custom-link customNavMblink" href="#contactUs">Contact</a>
+              </li>
+              <li class="nav-item nav-custom-item align-items-center" id="buttonxx">
+                <i class="navLinkIcon fas fa-sign-out-alt"></i>
+                <a class="nav-link nav-custom-link " href="">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+
+        <!-- cliked not -->
+
+
+        <div id="clikedFunctionFirst1" class="row w-100 d-lg-none d-md-none ">
+          <div
+            class="w-100 navbarLogoSection w-100 d-lg-none d-md-none d-flex justify-content-between align-items-center logoSectionFirstStyle">
+            <img src="./photos/Yeni Proje (1).png" alt="">
+            <i id="hamburger" class="fas fa-bars"></i>
+          </div>
+        </div>
+
+        <div id="clikedFunctionFirst2" class="col-lg-9 col-md-9 custom-9 ">
+          <div class="row">
+            <div class="col-md-12 d-flex justify-content-end align-items-center">
+              <div class="d-flex adminDiv align-items-center">
+                <img src="./photos/loginlogo.svg" alt="">
+                <span class="adminSpan">Admin</span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 padding-div">
+              <div class="addBookTitle">Add book</div>
+              <div class="searchBook">Search book</div>
+              <form action="#" class="formm">
+                <div class="searchbox">
+                  <img class="img-custom" src="./photos/searchlogo.svg" alt="">
+                  <input type="text" class="input-custom">
+                  <!-- <button class="btn-custom">Search</button> -->
+                </div>
+              </form>
+
+              <div class="result-section flex-column d-none">
+                <div class="d-flex align-items-center spinner-custom">
+                  <strong>Loading...</strong>
+                  <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+                </div>
+                <!-- <div class="result-div d-flex">
+                <img class="result-logo" src="./photos/clock.svg" alt="">
+                <div class="result-name">Dan Brown Davinc</div>
+              </div>
+              <div class="result-div d-flex">
+                <img class="result-logo" src="./photos/clock.svg" alt="">
+                <div class="result-name">Dan Brown Davinc</div>
+              </div> -->
+              </div>
+
+              <div class="form-section">Book Form</div>
+              <form class="bg-white form-area">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Book Name</label>
+                  <input type="text" class="form-control book-input-custom" id="bookName" aria-describedby="emailHelp">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Author Name</label>
+                  <input type="text" class="form-control book-input-custom" id="authorName">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Publish Year</label>
+                  <input type="text" class="form-control book-input-custom" id="publishYear">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Book Image Url</label>
+                  <input type="text" class="form-control book-input-custom" id="bookUrl">
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Description</label>
+                  <textarea class="form-control book-input-custom-desc" value="" id="bookDesc" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Book type
+                    <div class="btn-group dropright">
+                      <button type="button" class="btn plus-custom dropdown-toggle" data-toggle="dropdown"
+                        aria-expanded="false">
+                        <span class="text-success">+</span>
+                      </button>
+                      <div class="dropdown-menu dropdown-custom">
+                        <p class="dropdown-text">Add type</p>
+                        <input type="text" class="dropdown-input">
+                        <button class="btn btn-block btn-outline-warning mt-2 dropdown-button">Add</button>
+                      </div>
+                    </div>
+                  </label>
+                  <select class="form-control book-input-custom" id="bookType">
+                    <option></option>
+
+                  </select>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="form-check-custom">
+                  <label class="form-check-label" for="flexCheck">
+                    New
+                  </label>
+                </div>
+                <button type="submit" class="btn form-btn-custom" id="form-btn-custom">Add</button>
+              </form>
+
+
+              <div class="about-store-title" id="about-store-title">About Store</div>
+              <form id="customForm" class="bg-white form-area">
+                <div class="form-group">
+                  <label for="aboutUsTitle" class="title">Title</label>
+                  <input type="text" class="form-control book-input-custom" id="aboutUsTitle"
+                    aria-describedby="emailHelp" value="">
+                </div>
+                <div class="form-group">
+                  <label for="aboutUsUrl">Book Image Url</label>
+                  <input type="text" class="form-control book-input-custom" id="aboutUsUrl" value="">
+                </div>
+                <div class="form-group">
+                  <label for="aboutUsDesc">Description</label>
+                  <textarea class="form-control book-input-custom" id="aboutUsDesc" rows="3" value=""></textarea>
+                </div>
+                <button id="aboutUsBtn" type="submit" class="btn form-btn-custom">About info add</button>
+              </form>
+            </div>
+          </div>
+          <div class="tableDiv">
+            <div class="col-lg-8 col-md-12 tablecol" id="custom-table-div">
+              <p class="joinUs" id="joinUs">Join Us</p>
+              <div style="overflow-x: auto;">
+                <table class="table">
+                  <thead>
+                    <tr class="table-head-section">
+                      <th scope="col">#</th>
+                      <th scope="col">Full Name</th>
+                      <th scope="col">Email Address</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tBodyJoin">
+                    <!-- <tr>
+                  <th scope="row">1</th>
+                  <td>Audrey Mckinney</td>
+                  <td>lisa.watson@example.com</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Savannah Howard</td>
+                  <td>jeff.brown@example.com</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Morris Cooper</td>
+                  <td>terra.hamilton@example.com</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Victoria Lane</td>
+                  <td>deanna.curtis@example.com</td>
+                </tr> -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class=" contactUsDiv">
+            <div class="col-12">
+              <p class="joinUs" id="contactUs">Contact Us</p>
+              <div style="overflow-x: auto;">
+                <table class="table contactTable">
+                  <thead>
+                    <tr class="table-head-section">
+                      <th scope="col">#</th>
+                      <th scope="col">Full Name</th>
+                      <th scope="col">Address</th>
+                      <th scope="col">Email Address</th>
+                      <th scope="col">Phone Number</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tBodyContactUs">
+                    <!-- <tr>
+                  <th scope="row">1</th>
+                  <td>Audrey Mckinney</td>
+                  <td>1473 Ranchview Dr undefined San Jose</td>
+                  <td>lisa.watson@example.com</td>
+                  <td>(209) 555-0104</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Savannah Howard</td>
+                  <td>8445 Railroad St undefined Tampa</td>
+                  <td>jeff.brown@example.com</td>
+                  <td>(201) 555-0124</td>
+
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Morris Cooper</td>
+                  <td>8584 W Sherman Dr undefined Desoto</td>
+                  <td>terra.hamilton@example.com</td>
+                  <td>(505) 555-0125</td>
+
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Victoria Lane</td>
+                  <td>1921 Ranchview Dr undefined San Francisco</td>
+                   <td>deanna.curtis@example.com</td>
+                  <td>(704) 555-0127</td>
+                </tr> -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+  <script src="./src/admin.js"></script>
+</body>
+
+</html>
