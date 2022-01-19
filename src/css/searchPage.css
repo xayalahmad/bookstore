@@ -132,7 +132,7 @@ li.list-item-custom:hover{
 .modal-content {
   padding-right: 55px;
   padding-left: 55px;
-  width: 675px !important;
+  width: 475px !important;
 }
 .modal-header-custom {
   font-family: var(--mainFontFamily);
