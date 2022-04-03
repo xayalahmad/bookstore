@@ -15,6 +15,9 @@
   --colorGray: #333333;
   --color: #fffaf5;
 }
+.maincolor{
+  background-color: var(--mainColor);
+}
 body{
   background-color: var(--mainColor);
 }

@@ -346,9 +346,37 @@ color: var(--mainTextColor);
     font-size: 12px;
     color: #FFF;
 }
+.slickBtnbuy{
+  width: 100%;
 
+  height: 29px;
 
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--mainColor);
+  box-shadow: 0px 3px 8px rgba(225, 106, 0, 0.19);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 12px;
+  color: #FFF;
+}
+.fa-shopping-cart{
+  color: black;
+  font-size: 20px;
+}
+.basketnumber{
+  top: -8px;
+  font-size: 10px;
+  color: white;
+  background-color: #720418;
+  position: relative;
+  left: -10px;
+  border-radius: 20px;
+  width: 15px;
+  text-align: center;
+}
 /*  ! product page */
 #aboutstoreContainer{
   margin-top: 180px;

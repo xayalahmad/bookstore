@@ -7,12 +7,10 @@ var clikedFunctionFirst2 = document.getElementById("clikedFunctionFirst2")
 hamburger.addEventListener("click",function(){
   document.body.classList.add("OpenMenuSTART")
   clikedFunctionFirst1.classList.add("opavisib")
-  clikedFunctionFirst2.classList.add("opavisib")
-})
+  clikedFunctionFirst2.classList.add("opavisib")})
 var closeBtn = document.getElementById("closeBtn");
 closeBtn.addEventListener("click",function(){
-  document.body.classList.remove("OpenMenuSTART")
-})
+  document.body.classList.remove("OpenMenuSTART")})
 $(document).on("click", ".customNavMblink", function () {
   $("body").removeClass("OpenMenuSTART")
 });
@@ -47,6 +45,7 @@ $(document).ready(function () {
 
   $(document).on("keyup", ".input-custom", function (e) {
     let inputData = e.target.value;
+    console.log(inputData);
     console.log(inputData.length);
     if (inputData.length < 3) {
       $(".spinner-custom").removeClass("d-none");
@@ -69,7 +68,7 @@ $(document).ready(function () {
       method: "GET",
       headers: {
         "x-rapidapi-host": "goodreads-books.p.rapidapi.com",
-        "x-rapidapi-key": "9d9588302emsh58804fa5a30d4d9p1b947ajsn659ea6ae2269",
+        "x-rapidapi-key": "22f00fcc65msh133ba2a326b97a4p188a63jsn44522e40c334",
       },
     };
 
@@ -107,7 +106,7 @@ $(document).ready(function () {
       method: "GET",
       headers: {
         "x-rapidapi-host": "goodreads-books.p.rapidapi.com",
-        "x-rapidapi-key": "9d9588302emsh58804fa5a30d4d9p1b947ajsn659ea6ae2269",
+        "x-rapidapi-key": "22f00fcc65msh133ba2a326b97a4p188a63jsn44522e40c334",
       },
     };
     $.ajax(settings).then((response) => {

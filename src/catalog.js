@@ -10,7 +10,6 @@ $(document).ready(function () {
   };
   firebase.initializeApp(firebaseConfig);
   let db = firebase.database();
-
   // ! MODAL start
   $(document).on("click", "#joinButton", function (e) {
     e.preventDefault();
@@ -158,6 +157,7 @@ $(document).ready(function () {
               ? data.authorName
               : data.authorName.slice(0, 15) + "..."
             }</p>
+            <button href="#" id="buybook" class="btn slickBtnbuy btn-group maincolor mb-2">Buy</button>
         <button href="#" data-prodid="${data.id}" class="btn slickBtn btn-group">Read More</button>
       </div>
     </div>
@@ -252,7 +252,8 @@ $(document).ready(function () {
               ? data.authorName
               : data.authorName.slice(0, 15) + "..."
             }</p>
-          <button href="#" class="btn slickBtn btn-group">Read More</button>
+            <button href="#" id="buybook" class="btn slickBtnbuy btn-group maincolor mb-2">Buy</button>
+        <button href="#" data-prodid="${data.id}" class="btn slickBtn btn-group">Read More</button>
         </div>
       </div>
       </div>
@@ -319,8 +320,8 @@ $(document).ready(function () {
             ? data.authorName
             : data.authorName.slice(0, 15) + "..."
           }</p>
-          <button href="#"  data-prodid="${data.id
-          }" class="btn slickBtn btn-group">Read More</button>
+          <button href="#" id="buybook" class="btn slickBtnbuy btn-group maincolor mb-2">Buy</button>
+          <button href="#" data-prodid="${data.id}" class="btn slickBtn btn-group">Read More</button>
         </div>
       </div>
       </div>
@@ -386,8 +387,8 @@ $(document).ready(function () {
             ? data.authorName
             : data.authorName.slice(0, 15) + "..."
           }</p>
-      <button href="#" data-prodid="${data.id
-          }"  class="btn slickBtn btn-group">Read More</button>
+          <button href="#" id="buybook" class="btn slickBtnbuy btn-group maincolor mb-2">Buy</button>
+          <button href="#" data-prodid="${data.id}" class="btn slickBtn btn-group">Read More</button>
     </div>
   </div>
   </div>
@@ -435,7 +436,12 @@ $(document).ready(function () {
     });
   });
 });
-
+var basketnum = 0
+  $(document).on("click", ".slickBtnbuy", function(){
+    basketnum++
+    console.log(basketnum);
+    $(".basketnumber").html(basketnum)
+  })
 
 // HEADER SECTION STARTED
 document.getElementById("headerHamburgerWrapper").addEventListener("click", function () {
